@@ -15,4 +15,5 @@ if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
 }
 
-export const databaseRef = database().ref('todos');
+// This will be updated in the component where you have the user ID
+export const getUserTodosRef = (userId: string) => database().ref(`todos/${userId}`);
